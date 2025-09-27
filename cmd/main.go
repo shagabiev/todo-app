@@ -25,7 +25,9 @@ func main() {
 }
 
 func initConfig() error {
-	viper.AddConfigPath("configs")
-	viper.SetConfigName("config")
+	viper.AddConfigPath("../configs") // путь к папке с config.yml
+	viper.SetConfigName("config")     // имя файла без расширения
+	viper.SetConfigType("yaml")       // явно указываем формат
+
 	return viper.ReadInConfig()
 }
